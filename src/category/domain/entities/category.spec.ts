@@ -17,7 +17,7 @@ describe("Category Unit tests", () => {
       const category = new Category(item.props, item.id as any);
 
       expect(category.id).not.toBeNull();
-      expect(category.id).toBeInstanceOf(UniqueEntityId);
+      expect(category.uniqueEntityId).toBeInstanceOf(UniqueEntityId);
     });
   });
 
@@ -179,5 +179,27 @@ describe("Category Unit tests", () => {
 
     expect(category.name).toBe("Category 1");
     expect(category.description).toBe("Description 2");
+  });
+
+  test("if activate method will update the is_active field", () => {
+    const category = new Category({
+      name: "Category 1",
+      is_active: false,
+    });
+
+    category.activate();
+
+    expect(category.is_active).toBeTruthy();
+  });
+
+  test("if deactivate method will update the is_active field", () => {
+    const category = new Category({
+      name: "Category 1",
+      is_active: true,
+    });
+
+    category.deactivate();
+
+    expect(category.is_active).toBeFalsy();
   });
 });

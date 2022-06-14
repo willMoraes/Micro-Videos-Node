@@ -22,6 +22,14 @@ export class Category extends Entity<CategoryProperties> {
     this.description = props.description ?? this.description;
   }
 
+  activate() {
+    this.is_active = true;
+  }
+
+  deactivate() {
+    this.is_active = false;
+  }
+
   get name(): string {
     return this.props.name;
   }
