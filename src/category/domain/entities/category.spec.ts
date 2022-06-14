@@ -159,4 +159,25 @@ describe("Category Unit tests", () => {
 
     expect(category.created_at).toStrictEqual(created_at);
   });
+
+  test("if update will update the name field", () => {
+    const category = new Category({ name: "Category 1" });
+
+    category.update({ name: "Category 2" });
+
+    expect(category.name).toBe("Category 2");
+    expect(category.description).toBeNull();
+  });
+
+  test("if update will update the description field", () => {
+    const category = new Category({
+      name: "Category 1",
+      description: "Description 1",
+    });
+
+    category.update({ name: "Category 1", description: "Description 2" });
+
+    expect(category.name).toBe("Category 1");
+    expect(category.description).toBe("Description 2");
+  });
 });
