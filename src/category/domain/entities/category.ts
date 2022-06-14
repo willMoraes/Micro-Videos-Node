@@ -17,6 +17,11 @@ export class Category extends Entity<CategoryProperties> {
     this.props.is_active = this.props.is_active ?? true;
   }
 
+  update(props: Pick<CategoryProperties, "name" | "description">) {
+    this.name = props.name ?? this.name;
+    this.description = props.description ?? this.description;
+  }
+
   get name(): string {
     return this.props.name;
   }
