@@ -1,6 +1,6 @@
 import { Category, CategoryProperties } from "./category";
 import { forEach, omit } from "lodash";
-import UniqueEntityId from "../../../@seedworks/domain/unique-entity-id.vo";
+import UniqueEntityId from "../../../@seedworks/value-objects/unique-entity-id.vo";
 
 type CategoryDataProps = { props: CategoryProperties; id?: UniqueEntityId };
 
