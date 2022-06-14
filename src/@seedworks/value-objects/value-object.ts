@@ -1,4 +1,4 @@
-import { deepFreeze } from "../utils/object";
+import { deepFreeze } from "../domain/utils/object";
 
 export default abstract class ValueObject<T = any> {
   protected readonly _value: T;
