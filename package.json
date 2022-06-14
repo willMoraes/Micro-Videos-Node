@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "test:watch": "jest --watch",
     "ts-node": "ts-node",
     "tsc": "tsc",
     "clean:tsc": "rm tsconfig.tsbuildinfo"
